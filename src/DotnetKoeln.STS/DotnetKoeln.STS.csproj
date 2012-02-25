@@ -114,8 +114,6 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionFilter\RequireSslAttribute.cs" />
-    <Compile Include="ActionFilter\ValidateAntiForgeryTokenFilter.cs" />
     <Compile Include="ActionResults\PassiveSignInResponseResult.cs" />
     <Compile Include="ActionResults\PassiveSignOutRequestResult.cs" />
     <Compile Include="ActionResults\WSFederationSignIn.cs" />
@@ -130,7 +128,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Initialize\InitializeMvcRoutes.cs" />
-    <Compile Include="Infrastructure\Initialize\IntializeGlobalFilters.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\ClaimTypes.cs" />
