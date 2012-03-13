@@ -120,9 +120,13 @@ namespace DotnetKoeln.STS.TokenService
                         outputIdentity.Claims.Add(new Claim(requestClaim.ClaimType, value));
                     }
                 }
-                if (!outputIdentity.Claims.Any(c => c.ClaimType == Security.ClaimTypes.Name))
+                if (outputIdentity.Claims.All(c => c.ClaimType != Security.ClaimTypes.Name))
                 {
                     outputIdentity.Claims.Add(new Claim(Security.ClaimTypes.Name, webUser.Username));
+                }
+                if (outputIdentity.Claims.All(c => c.ClaimType != Security.ClaimTypes.Role))
+                {
+                    outputIdentity.Claims.Add(new Claim(Security.ClaimTypes.Role, webUser.Role));
                 }
             }
             return outputIdentity;
